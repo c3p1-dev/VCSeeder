@@ -1,5 +1,4 @@
 ﻿
-
 using System.Net.Http.Json;
 using System.Text;
 using carnetDb.Models;
@@ -11,6 +10,11 @@ namespace VCSeeder
     {
         static async Task Main(string[] args)
         {
+
+            // Init SQLitePCLRaw_bundle_sqlite (= use system SQLite)
+            SQLitePCL.Batteries_V2.Init();
+
+            //
             LoginModel loginModel = new LoginModel();
             HttpClient httpClient = new HttpClient();
 
