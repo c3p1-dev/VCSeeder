@@ -6,4 +6,6 @@ It first the base url of the WebAPI, then asks for login informations.
 If login is successful, it attempts to read the database (usually vcdump.db) locally,
 and write line to line every table to the new remote database.
 
+The user must have the "VisualCarnet" role to be authorized.
+
 If login fails or source database is not valid, it ends.
