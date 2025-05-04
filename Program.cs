@@ -14,9 +14,26 @@ namespace VCSeeder
             LoginModel loginModel = new LoginModel();
             HttpClient httpClient = new HttpClient();
 
-            Console.WriteLine("VCSeeder");
+            Console.WriteLine("c3p1-dev/VCSeeder");
             Console.Write("Url : ");
-            string? baseurl = Console.ReadLine();
+
+            string? b = Console.ReadLine();
+            string baseurl;
+            if(b != null)
+            {
+                if (!b.EndsWith('/'))
+                {
+                    // adds / at the end of path
+                    b = b + "/";
+                }
+
+                baseurl = b;
+            }
+            else
+            {
+                throw new Exception("Base Url can't be null");
+            }
+            
             Console.Write("Login : ");
             loginModel.username = Console.ReadLine();
             Console.Write("Password : ");
